@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<div class="p-3 mb-2 bg-secondary text-white"></div>
+<a href="/add">Add a Todolist</a><br />
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Content</th>
+        <th>Everything</th>
+    </tr>
+    <tr th:each="todolist : ${todolists}">
+        <td th:text="${todolist.title}" @ ></td>
+        <td th:text="${todolist.content}"></td>
+        <td>
+            <a th:href="@{/update/{id}(id=${todolist.id})}">Update</a> -
+            <a th:href="@{/detail/{id}(id=${todolist.id})}">Details</a> -
+            <a th:href="@{/delete/{id}(id=${todolist.id})}">Delete</a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
