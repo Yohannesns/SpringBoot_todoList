@@ -35,7 +35,7 @@ public class HomeController {
         todolistRepository.save(todolist);
         return "redirect:/";
     }
-    @RequestMapping("/detail/{id}")
+    @RequestMapping("/details/{id}")
     public String showTodolist(@PathVariable("id") long id, Model model){
         model.addAttribute("todolist", todolistRepository.findById(id).get());
         return "show";

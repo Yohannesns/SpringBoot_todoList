@@ -15,18 +15,18 @@ public class Todolist {
     private long id;
 
     @NotNull
-    @Size(min=4)
+
     private String title;
 
     @NotNull
-    @Size(min=10)
+
     private String content;
 
     public Todolist(String content) {
         this.content = content;
     }
 
-    public Todolist(@NotNull @Size(min = 4) String title, @NotNull @Size(min = 10) String content) {
+    public Todolist( String title,  String content) {
         this.title = title;
         this.content = content;
     }
